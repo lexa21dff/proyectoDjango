@@ -4,5 +4,5 @@ from proyectos.models import Programa
 class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Programa
-        fields = ['id', 'nombre', 'centros_de_formacion']
+        fields = ['url','id', 'nombre', 'centros_de_formacion']
 
