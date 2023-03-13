@@ -6,3 +6,5 @@ class RegionalSerializer(serializers.HyperlinkedModelSerializer):
         model = Regional
         fields = [ 'url','id','nombre']
 
+
+

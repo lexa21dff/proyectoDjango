@@ -6,3 +6,4 @@ class Centros_de_formacionSerializer(serializers.HyperlinkedModelSerializer):
         model = Centros_de_formacion
         fields = [ 'url','id','nombre', 'regional']
 
+
