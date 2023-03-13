@@ -122,7 +122,7 @@ class Proyecto(models.Model):
     
 class Equipo_trabajo (models.Model):
     codigo_grupo    = models.CharField(max_length=15, unique = True) # c+odigo auto generado por medio de un script 
-    perfil          = models.ForeignKey(Perfil, on_delete = models.PROTECT)
+    perfil          = models.ForeignKey(Perfil, on_delete = models.PROTECT) #--- con el correo electronico
     ficha           = models.ForeignKey(Ficha, on_delete = models.PROTECT)
     proyecto        = models.IntegerField(null= True, blank= True) # consulta el id del Proyecto
     

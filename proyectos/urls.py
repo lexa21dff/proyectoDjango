@@ -14,10 +14,14 @@ from proyectos.views.proyecto import *
 from proyectos.views.equipo_trabajo import *
 from proyectos.views.entrega import *
 from proyectos.views.documento import *
+from proyectos.views.user import *
+
+
 
 router = routers.DefaultRouter()
 
 router.register(r'rol', RolViewSet)
+router.register(r'user', UserViewSet)
 router.register(r'regional', RegionalViewSet)
 router.register(r'ficha', FichaViewSet)
 router.register(r'centro', Centros_de_formacionViewSet)
