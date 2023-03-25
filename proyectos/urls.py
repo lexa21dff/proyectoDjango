@@ -18,6 +18,7 @@ from proyectos.views.user import *
 
 
 
+
 router = routers.DefaultRouter()
 
 router.register(r'rol', RolViewSet)

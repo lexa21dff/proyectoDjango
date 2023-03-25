@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from proyectos.views.buscar_proyecto import ProyectoList
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('proyectos.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('buscar_proyectos/', ProyectoList.as_view()),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+   
 
 ]

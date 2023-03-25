@@ -112,6 +112,7 @@ class Proyecto(models.Model):
 
     # documento       = models.FileField(upload_to = 'proyectos/documentos', null=True, blank=True)  # documento inicial del anteproyecto  
     estado              = models.CharField(max_length=20, choices = ESTADO_PROYECTO, default = 'en revision')
+    autor               = models.IntegerField(null= True, blank= True) # consulta el id del usuario que creo la idea usuario que esa conectado 
 
     creado              = models.DateTimeField(auto_now_add = True)
     editado             = models.DateTimeField(auto_now = True)
