@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from proyectos.views.buscar_proyecto import ProyectoList
+from proyectos.views import registrar
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('proyectos.urls')),
+    path('create_user/', registrar.create_user, name='create_user'),
+    path('api/', include('djoser.urls')),
+    path('api/', include('djoser.urls.authtoken')),
     path('buscar_proyectos/', ProyectoList.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
    
