@@ -4,4 +4,4 @@ from proyectos.models import Categoria
 class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Categoria
-        fields = ['id', 'nombre']
+        fields = ['url','id', 'nombre']

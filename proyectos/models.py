@@ -110,7 +110,7 @@ class Proyecto(models.Model):
     codigo_fuente       = models.URLField(null= True, blank= True,)    
     categorias          = models.ManyToManyField(Categoria, null=True, blank=True)
 
-    # documento       = models.FileField(upload_to = 'proyectos/documentos', null=True, blank=True)  # documento inicial del anteproyecto  
+    documento       = models.FileField(upload_to = 'proyectos/documentos', null=True, blank=True)  # documento inicial del anteproyecto  
     estado              = models.CharField(max_length=20, choices = ESTADO_PROYECTO, default = 'en revision')
     autor               = models.IntegerField(null= True, blank= True) # consulta el id del usuario que creo la idea usuario que esa conectado 
 
