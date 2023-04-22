@@ -135,7 +135,7 @@ class Entrega (models.Model):
     calificacion            = models.CharField(max_length=20, choices = CALIFICACION,null= True, blank= True)
     descripcion_entrega     = models.CharField(max_length=5000 )    
     respuesta_instructor    = models.CharField(max_length=5000, null= True, blank= True)  
-    # Estado_entrega          = models.CharField(max_length=5000 )   
+    #Estado_entrega          = models.CharField(max_length=5000 )   
     instructor              = models.CharField(max_length=300 ,null= True, blank= True) # solo va el nombre del instructor que hizo la revision     
     
     proyecto                = models.ForeignKey(Proyecto, on_delete = models.PROTECT )
@@ -147,7 +147,7 @@ class Entrega (models.Model):
 
 
     def __str__(self):
-        return self.calificacion + " " + str(self.creado) + " " + str(self.editado)
+        return self.calificacion + " " + str(self.creado) + " " + str(self.editado) + " " + str(self.aprendiz.documento)
     
 class Documento (models.Model):
     documento       = models.FileField(upload_to = 'proyectos/documentos',)

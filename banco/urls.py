@@ -16,15 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from proyectos.views.buscar_proyecto import ProyectoList
-from proyectos.views import registrar
+from proyectos.views.registrar import register
+from proyectos.views.iniciar_sesion import UserLoginAPIView
+from proyectos.views.cerrar_sesion import logout_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('proyectos.urls')),
-    path('create_user/', registrar.create_user, name='create_user'),
-    path('api/', include('djoser.urls')),
-    path('api/', include('djoser.urls.authtoken')),
+    #path('create_user/', registrar.register_users_from_excel(), name='create_user'),
+    # path('api/', include('djoser.urls')),
+    # path('api/', include('djoser.urls.authtoken')),
+    path('register/', register),
+    path('api/login/', UserLoginAPIView.as_view(), name='login'),
+    path('logout/', logout_view),
     path('buscar_proyectos/', ProyectoList.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('accounts/', include('allauth.urls')),
    
 
 ]
